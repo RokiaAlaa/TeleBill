@@ -1,0 +1,6 @@
+@TeleBill.Ingestion.Api_HostAddress = http://localhost:5160
+
+GET {{TeleBill.Ingestion.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

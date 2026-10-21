@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{06CF11AE-9F4F-4443-ADCF-EF8E464A73B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{BDCB64C3-8D64-4BB3-BE21-BF750D4B5FC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeleBill.BuildingBlocks", "src\BuildingBlocks\TeleBill.BuildingBlocks\TeleBill.BuildingBlocks.csproj", "{CED4D32D-EEB6-409B-ADAC-7154E9139040}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{08F10093-A7DF-4DA4-ACF1-B4BF1C620C2E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ingestion", "Ingestion", "{4997F72F-5E10-4CB0-A685-1BEB972243C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeleBill.Ingestion.Api", "src\Services\Ingestion\TeleBill.Ingestion.Api\TeleBill.Ingestion.Api.csproj", "{A6723BCA-BE51-4370-8C65-D32F66066238}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeleBill.Ingestion.Application", "src\Services\Ingestion\TeleBill.Ingestion.Application\TeleBill.Ingestion.Application.csproj", "{49248302-7F99-478A-AAC9-5C262ECD435A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeleBill.Ingestion.Domain", "src\Services\Ingestion\TeleBill.Ingestion.Domain\TeleBill.Ingestion.Domain.csproj", "{7247D30B-96FF-41FE-93DC-88F14BE1BB5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeleBill.Ingestion.Infrastructure", "src\Services\Ingestion\TeleBill.Ingestion.Infrastructure\TeleBill.Ingestion.Infrastructure.csproj", "{14FD1801-F686-4538-A25D-6455E1643865}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CED4D32D-EEB6-409B-ADAC-7154E9139040}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CED4D32D-EEB6-409B-ADAC-7154E9139040}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CED4D32D-EEB6-409B-ADAC-7154E9139040}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CED4D32D-EEB6-409B-ADAC-7154E9139040}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6723BCA-BE51-4370-8C65-D32F66066238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6723BCA-BE51-4370-8C65-D32F66066238}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6723BCA-BE51-4370-8C65-D32F66066238}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6723BCA-BE51-4370-8C65-D32F66066238}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49248302-7F99-478A-AAC9-5C262ECD435A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49248302-7F99-478A-AAC9-5C262ECD435A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49248302-7F99-478A-AAC9-5C262ECD435A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49248302-7F99-478A-AAC9-5C262ECD435A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7247D30B-96FF-41FE-93DC-88F14BE1BB5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7247D30B-96FF-41FE-93DC-88F14BE1BB5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7247D30B-96FF-41FE-93DC-88F14BE1BB5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7247D30B-96FF-41FE-93DC-88F14BE1BB5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14FD1801-F686-4538-A25D-6455E1643865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14FD1801-F686-4538-A25D-6455E1643865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14FD1801-F686-4538-A25D-6455E1643865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14FD1801-F686-4538-A25D-6455E1643865}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BDCB64C3-8D64-4BB3-BE21-BF750D4B5FC9} = {06CF11AE-9F4F-4443-ADCF-EF8E464A73B5}
+		{CED4D32D-EEB6-409B-ADAC-7154E9139040} = {BDCB64C3-8D64-4BB3-BE21-BF750D4B5FC9}
+		{08F10093-A7DF-4DA4-ACF1-B4BF1C620C2E} = {06CF11AE-9F4F-4443-ADCF-EF8E464A73B5}
+		{4997F72F-5E10-4CB0-A685-1BEB972243C3} = {08F10093-A7DF-4DA4-ACF1-B4BF1C620C2E}
+		{A6723BCA-BE51-4370-8C65-D32F66066238} = {4997F72F-5E10-4CB0-A685-1BEB972243C3}
+		{49248302-7F99-478A-AAC9-5C262ECD435A} = {4997F72F-5E10-4CB0-A685-1BEB972243C3}
+		{7247D30B-96FF-41FE-93DC-88F14BE1BB5F} = {4997F72F-5E10-4CB0-A685-1BEB972243C3}
+		{14FD1801-F686-4538-A25D-6455E1643865} = {4997F72F-5E10-4CB0-A685-1BEB972243C3}
+	EndGlobalSection
+EndGlobal
