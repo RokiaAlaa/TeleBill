@@ -1,0 +1,19 @@
+@host = http://localhost:5160
+
+### صح
+POST {{host}}/api/v1/usage
+Content-Type: application/json
+
+{ "externalEventId": "evt-001", "msisdn": "+201012345678", "type": "Call", "quantity": 125, "occurredAt": "2026-10-17T10:00:00Z" }
+
+### msisdn غلط
+POST {{host}}/api/v1/usage
+Content-Type: application/json
+
+{ "externalEventId": "evt-002", "msisdn": "0101234", "type": "Call", "quantity": 125, "occurredAt": "2026-10-17T10:00:00Z" }
+
+### quantity سالب
+POST {{host}}/api/v1/usage
+Content-Type: application/json
+
+{ "externalEventId": "evt-003", "msisdn": "+201012345678", "type": "Data", "quantity": -5, "occurredAt": "2026-10-17T10:00:00Z" }
