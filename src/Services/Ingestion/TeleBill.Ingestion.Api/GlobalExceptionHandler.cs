@@ -2,6 +2,7 @@ using FluentValidation;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using TeleBill.BuildingBlocks.Domain;
+using TeleBill.Ingestion.Application.Usage;
 
 namespace TeleBill.Ingestion.Api;
 
@@ -13,6 +14,7 @@ public sealed class GlobalExceptionHandler(IProblemDetailsService problems, ILog
         {
             ValidationException => (400, "Validation failed"),
             DomainException => (422, "Business rule violated"),
+            DuplicateUsageEventException => (409, "Duplicate usage event"),
             _ => (500, "Unexpected error")
         };
         if (status == 500) log.LogError(ex, "unhandled exception");

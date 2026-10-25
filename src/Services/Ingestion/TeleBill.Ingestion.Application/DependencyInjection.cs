@@ -10,6 +10,7 @@ public static class DependencyInjection
     {
         s.AddValidatorsFromAssemblyContaining<RecordUsageRequestValidator>();
         s.AddScoped<RecordUsageHandler>();
+        s.AddScoped<RecordUsageBatchHandler>();
         return s;
     }
 }

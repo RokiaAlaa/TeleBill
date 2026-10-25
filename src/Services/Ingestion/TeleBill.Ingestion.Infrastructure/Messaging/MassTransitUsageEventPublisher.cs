@@ -8,5 +8,11 @@ namespace TeleBill.Ingestion.Infrastructure.Messaging;
 internal sealed class MassTransitUsageEventPublisher(IPublishEndpoint bus) : IUsageEventPublisher
 {
     public Task PublishAsync(UsageEvent e, CancellationToken ct) =>
-        bus.Publish(new UsageRecorded(e.Id, e.Msisdn, e.Type.ToString(), e.Quantity, e.OccurredAt), ct);
+        bus.Publish(ToMessage(e), ct);
+
+    public Task PublishBatchAsync(IReadOnlyCollection<UsageEvent> events, CancellationToken ct) =>
+        bus.PublishBatch(events.Select(ToMessage), ct);
+
+    private static UsageRecorded ToMessage(UsageEvent e) =>
+        new (e.Id, e.Msisdn, e.Type.ToString(), e.Quantity, e.OccurredAt);
 }
