@@ -1,0 +1,6 @@
+@TeleBill.Billing.Api_HostAddress = http://localhost:5151
+
+GET {{TeleBill.Billing.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

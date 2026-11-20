@@ -17,6 +17,9 @@ public class UsageController(RecordUsageHandler handler, RecordUsageBatchHandler
 
     [HttpPost("batch")]
     public async Task<IActionResult> RecordBatch(RecordUsageBatchRequest request, CancellationToken ct)
-        => Ok(await batchHandler.HandleAsync(request, ct)); 
+    {
+        var result = await batchHandler.HandleAsync(request, ct); 
+        return result.Accepted > 0 ? Accepted(result) : Ok(result);
+    }
 
 }
