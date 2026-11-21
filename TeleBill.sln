@@ -31,6 +31,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeleBill.Billing.Infrastruc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeleBill.Billing.Api", "src\Services\Billing\TeleBill.Billing.Api\TeleBill.Billing.Api.csproj", "{281137F7-F885-416B-8CAC-B4C7671CA210}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0AB3BF05-4346-4AA6-1389-037BE0695223}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeleBill.Ingestion.Tests", "tests\TeleBill.Ingestion.Tests\TeleBill.Ingestion.Tests.csproj", "{696BE879-8DB9-40D5-A10F-524618DC55E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,6 +153,18 @@ Global
 		{281137F7-F885-416B-8CAC-B4C7671CA210}.Release|x64.Build.0 = Release|Any CPU
 		{281137F7-F885-416B-8CAC-B4C7671CA210}.Release|x86.ActiveCfg = Release|Any CPU
 		{281137F7-F885-416B-8CAC-B4C7671CA210}.Release|x86.Build.0 = Release|Any CPU
+		{696BE879-8DB9-40D5-A10F-524618DC55E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{696BE879-8DB9-40D5-A10F-524618DC55E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{696BE879-8DB9-40D5-A10F-524618DC55E1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{696BE879-8DB9-40D5-A10F-524618DC55E1}.Debug|x64.Build.0 = Debug|Any CPU
+		{696BE879-8DB9-40D5-A10F-524618DC55E1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{696BE879-8DB9-40D5-A10F-524618DC55E1}.Debug|x86.Build.0 = Debug|Any CPU
+		{696BE879-8DB9-40D5-A10F-524618DC55E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{696BE879-8DB9-40D5-A10F-524618DC55E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{696BE879-8DB9-40D5-A10F-524618DC55E1}.Release|x64.ActiveCfg = Release|Any CPU
+		{696BE879-8DB9-40D5-A10F-524618DC55E1}.Release|x64.Build.0 = Release|Any CPU
+		{696BE879-8DB9-40D5-A10F-524618DC55E1}.Release|x86.ActiveCfg = Release|Any CPU
+		{696BE879-8DB9-40D5-A10F-524618DC55E1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -167,5 +183,6 @@ Global
 		{8D29E544-C542-4C82-8413-1094191CBCE4} = {93D56332-4876-4F78-1B60-B536D3CE4052}
 		{B59D3D89-CB97-410D-A8CA-D437B0F84A36} = {93D56332-4876-4F78-1B60-B536D3CE4052}
 		{281137F7-F885-416B-8CAC-B4C7671CA210} = {93D56332-4876-4F78-1B60-B536D3CE4052}
+		{696BE879-8DB9-40D5-A10F-524618DC55E1} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
 	EndGlobalSection
 EndGlobal
