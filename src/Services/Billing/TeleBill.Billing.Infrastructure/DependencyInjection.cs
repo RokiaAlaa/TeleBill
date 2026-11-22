@@ -1,7 +1,9 @@
 using MassTransit;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TeleBill.Billing.Infrastructure.Messaging;
+using TeleBill.Billing.Infrastructure.Persistence;
 
 namespace TeleBill.Billing.Infrastructure;
 
@@ -9,6 +11,8 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection s, IConfiguration c)
     {
+        s.AddDbContext<BillingDbContext>(o => o.UseNpgsql(c.GetConnectionString("Default")));
+           
         s.AddMassTransit(x => {
             x.SetKebabCaseEndpointNameFormatter();
             x.AddConsumer<UsageRecordedConsumer>();
