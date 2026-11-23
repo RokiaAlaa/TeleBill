@@ -47,6 +47,56 @@ namespace TeleBill.Billing.Infrastructure.Persistence.Migrations
                     b.ToTable("plans", (string)null);
                 });
 
+            modelBuilder.Entity("TeleBill.Billing.Domain.RatedUsageRecord", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<decimal>("Charge")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("numeric(18,4)");
+
+                    b.Property<decimal>("IncludedQuantity")
+                        .HasPrecision(18, 3)
+                        .HasColumnType("numeric(18,3)");
+
+                    b.Property<DateTimeOffset>("OccurredAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<decimal>("OverageQuantity")
+                        .HasPrecision(18, 3)
+                        .HasColumnType("numeric(18,3)");
+
+                    b.Property<DateOnly>("Period")
+                        .HasColumnType("date");
+
+                    b.Property<decimal>("Quantity")
+                        .HasPrecision(18, 3)
+                        .HasColumnType("numeric(18,3)");
+
+                    b.Property<Guid>("SubscriberId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)")
+                        .HasColumnName("type");
+
+                    b.Property<Guid>("UsageEventId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsageEventId")
+                        .IsUnique();
+
+                    b.HasIndex("SubscriberId", "Period");
+
+                    b.ToTable("rated_usage", (string)null);
+                });
+
             modelBuilder.Entity("TeleBill.Billing.Domain.Subscriber", b =>
                 {
                     b.Property<Guid>("Id")
@@ -103,6 +153,46 @@ namespace TeleBill.Billing.Infrastructure.Persistence.Migrations
                         .HasFilter("\"Status\" = 'Active'");
 
                     b.ToTable("subscriptions", (string)null);
+                });
+
+            modelBuilder.Entity("TeleBill.Billing.Infrastructure.Persistence.ProcessedMessage", b =>
+                {
+                    b.Property<Guid>("MessageId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("message_id");
+
+                    b.Property<DateTimeOffset>("ProcessedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("processed_at");
+
+                    b.HasKey("MessageId");
+
+                    b.ToTable("processed_messages", (string)null);
+                });
+
+            modelBuilder.Entity("TeleBill.Billing.Infrastructure.Persistence.UsageCounter", b =>
+                {
+                    b.Property<Guid>("SubscriberId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("subscriber_id");
+
+                    b.Property<DateOnly>("Period")
+                        .HasColumnType("date")
+                        .HasColumnName("period");
+
+                    b.Property<string>("Type")
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)")
+                        .HasColumnName("type");
+
+                    b.Property<decimal>("Used")
+                        .HasPrecision(18, 3)
+                        .HasColumnType("numeric(18,3)")
+                        .HasColumnName("used");
+
+                    b.HasKey("SubscriberId", "Period", "Type");
+
+                    b.ToTable("usage_counters", (string)null);
                 });
 
             modelBuilder.Entity("TeleBill.Billing.Domain.Plan", b =>

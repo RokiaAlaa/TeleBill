@@ -1,9 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+using TeleBill.Billing.Application;
 using TeleBill.Billing.Infrastructure;
 using TeleBill.Billing.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddControllers();
 

@@ -8,6 +8,10 @@ public sealed class BillingDbContext(DbContextOptions<BillingDbContext> options)
     public DbSet<Plan> Plans => Set<Plan>();
     public DbSet<Subscriber> Subscribers => Set<Subscriber>();
     public DbSet<Subscription> Subscriptions => Set<Subscription>();
+    public DbSet<UsageCounter> UsageCounters => Set<UsageCounter>();
+    public DbSet<ProcessedMessage> ProcessedMessages => Set<ProcessedMessage>();
+    public DbSet<RatedUsageRecord> RatedUsages => Set<RatedUsageRecord>();
 
-    protected override void OnModelCreating(ModelBuilder mb) => mb.ApplyConfigurationsFromAssembly(typeof(BillingDbContext).Assembly);
+    protected override void OnModelCreating(ModelBuilder mb) =>
+        mb.ApplyConfigurationsFromAssembly(typeof(BillingDbContext).Assembly);
 }
